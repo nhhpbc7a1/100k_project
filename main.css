@@ -31,13 +31,13 @@ body {
 .circle::after{
     display: block;
     content: "";
-    height: 55px;
+    height: 56px;
     width: calc(var(--size) * 4 / 100);
     background-color: var(--color);
     transform: rotate(-45deg);
     position: absolute;
-    top: 118px;
-    left: 136px;
+    top: 116px;
+    left: 134.5px;
 }
 
 .circle1{
