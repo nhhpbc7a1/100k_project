@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+    </div>
+
+    <script>
+    
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+    
+        const container = $('.container');
+
+        let x = 200, y = 250, z = -15, h = 142;
+        const htmls = [];
+        
+        drawBig = function(xx, yy, zz)
+        {
+            htmls.push(
+                `
+                <div class="circle-box" style="top:${xx}px; left:${yy}px;" >
+                    <div class="circle" style=" transform: rotate(${zz}deg);"></div>
+                </div>
+                <div class="circle-child-box" style="top:${xx + 50}px; left:${yy + 50}px;" >
+                    <div class="circle-child" style=" transform: rotate(${zz}deg);"></div>
+                </div>
+  
+                `);
+        }
+
+        drawBig(x - h, y, z);        z += 60;
+
+        drawBig(x - h * Math.sin(Math.PI / 6), y + h * Math.sin(Math.PI / 3), z);        z += 60;
+        
+        drawBig(x + h * Math.sin(Math.PI / 6), y + h * Math.sin(Math.PI / 3), z);        z += 60;
+        
+        drawBig(x + h, y, z);        z += 60;
+        
+        drawBig(x + h * Math.sin(Math.PI / 6), y - h * Math.sin(Math.PI / 3), z);        z += 60;
+
+        drawBig(x - h * Math.sin(Math.PI / 6), y - h * Math.sin(Math.PI / 3), z);        z += 60;
+
+
+        drawBig = function(xx, yy, zz)
+        {
+            htmls.push(
+                `
+                <div class="circle-box" style="top:${xx}px; left:${yy}px;" >
+                    <div class="circle1" style=" transform: rotate(${zz}deg);"></div>
+                </div>
+                <div class="circle-child-box" style="top:${xx + 50}px; left:${yy + 50}px;" >
+                    <div class="circle-child" style=" transform: rotate(${zz}deg);"></div>
+                </div>
+                `);
+        }
+
+        z = 15;
+        drawBig(x - h, y, z);        z += 60;
+
+        drawBig(x - h * Math.sin(Math.PI / 6), y + h * Math.sin(Math.PI / 3), z);        z += 60;
+        
+        drawBig(x + h * Math.sin(Math.PI / 6), y + h * Math.sin(Math.PI / 3), z);        z += 60;
+        
+        drawBig(x + h, y, z);        z += 60;
+        
+        drawBig(x + h * Math.sin(Math.PI / 6), y - h * Math.sin(Math.PI / 3), z);        z += 60;
+
+        drawBig(x - h * Math.sin(Math.PI / 6), y - h * Math.sin(Math.PI / 3), z);        z += 60;
+
+
+        container.innerHTML = htmls.join('');
+    
+    </script>
+</body>
+</html>
